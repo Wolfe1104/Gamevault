@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url('background.jpeg');
+    background-image: url('./background.jpeg'); /* Adjusted path with ./ */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -64,7 +64,7 @@ h1 {
     position: absolute;
     right: 0;
     background-color: #f9f9f9;
-    min-width: 200px; /* Larger dropdown width */
+    min-width: 200px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     z-index: 1;
     border-radius: 5px;
@@ -73,10 +73,10 @@ h1 {
 
 .dropdown-content a {
     color: black;
-    padding: 16px 20px; /* Larger padding for bigger items */
+    padding: 16px 20px;
     text-decoration: none;
     display: block;
-    font-size: 18px; /* Larger text */
+    font-size: 18px;
 }
 
 .dropdown-content a:hover {
@@ -115,7 +115,7 @@ main {
     }
 
     .dropdown-content {
-        min-width: 150px; /* Slightly smaller but still larger on mobile */
+        min-width: 150px;
     }
 
     .dropdown-content a {
