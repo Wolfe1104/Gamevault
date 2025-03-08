@@ -28,7 +28,7 @@
             align-items: center;
             justify-content: space-between;
             background-color: rgba(20, 20, 20, 0.9);
-            padding: 20px 40px;
+            padding: 30px 50px; /* Increased padding for larger header */
             width: 100%;
             position: fixed;
             top: 0;
@@ -38,32 +38,17 @@
         }
 
         .header-icon {
-            width: 60px;
-            height: 60px;
-            margin-right: 20px;
+            width: 80px; /* Increased from 60px */
+            height: 80px;
+            margin-right: 25px; /* Slightly increased */
             border-radius: 50%;
             object-fit: cover;
-        }
-
-        .header-content {
-            display: flex;
-            align-items: center;
-            flex-grow: 1;
-            justify-content: space-between;
-        }
-
-        header h1 {
-            font-size: 28px;
-            font-weight: 700;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .header-right {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 25px; /* Increased from 20px */
         }
 
         .dropdown {
@@ -73,11 +58,11 @@
         .dropdown-btn {
             background-color: #1e90ff;
             color: #fff;
-            padding: 10px 20px;
+            padding: 12px 25px; /* Increased from 10px 20px */
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 18px; /* Increased from 16px */
             font-weight: 600;
             transition: background-color 0.3s ease;
         }
@@ -91,7 +76,7 @@
             position: absolute;
             right: 0;
             background-color: #fff;
-            min-width: 200px;
+            min-width: 220px; /* Increased from 200px */
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             border-radius: 5px;
             z-index: 1;
@@ -100,10 +85,10 @@
 
         .dropdown-content a {
             color: #333;
-            padding: 12px 16px;
+            padding: 14px 18px; /* Increased from 12px 16px */
             text-decoration: none;
             display: block;
-            font-size: 16px;
+            font-size: 18px; /* Increased from 16px */
             transition: background-color 0.3s ease;
         }
 
@@ -121,22 +106,22 @@
         }
 
         .search-input {
-            padding: 10px;
+            padding: 12px; /* Increased from 10px */
             border: none;
             border-radius: 5px 0 0 5px;
-            font-size: 16px;
-            width: 200px;
+            font-size: 18px; /* Increased from 16px */
+            width: 250px; /* Increased from 200px */
             outline: none;
         }
 
         .search-btn {
             background-color: #1e90ff;
             color: #fff;
-            padding: 10px 15px;
+            padding: 12px 18px; /* Increased from 10px 15px */
             border: none;
             border-radius: 0 5px 5px 0;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 18px; /* Increased from 16px */
             transition: background-color 0.3s ease;
         }
 
@@ -147,60 +132,63 @@
         main {
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: calc(100vh - 100px);
-            padding: 100px 20px 20px;
+            align-items: flex-start; /* Aligns title at the top */
+            min-height: 100vh;
+            padding: 140px 20px 20px; /* Increased top padding for larger header */
         }
 
         main h2 {
-            font-size: 48px; /* Semi-large title */
-            font-weight: 600;
+            font-size: 60px; /* Larger title */
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             text-align: center;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
         }
 
         @media (max-width: 768px) {
             header {
-                padding: 15px 20px;
+                padding: 20px 25px; /* Adjusted for mobile */
                 flex-wrap: wrap;
             }
 
             .header-icon {
-                width: 40px;
-                height: 40px;
-            }
-
-            header h1 {
-                font-size: 22px;
+                width: 50px; /* Adjusted for mobile */
+                height: 50px;
             }
 
             .header-right {
-                gap: 10px;
-                margin-top: 10px;
+                gap: 15px;
+                margin-top: 15px;
             }
 
             .search-input {
-                width: 150px;
+                width: 180px; /* Adjusted for mobile */
+                font-size: 16px;
+                padding: 10px;
             }
 
             .dropdown-btn, .search-btn {
-                padding: 8px 15px;
-                font-size: 14px;
+                padding: 10px 18px;
+                font-size: 16px;
             }
 
             .dropdown-content {
-                min-width: 160px;
+                min-width: 180px;
             }
 
             .dropdown-content a {
-                font-size: 14px;
-                padding: 10px 14px;
+                font-size: 16px;
+                padding: 12px 16px;
+            }
+
+            main {
+                padding: 100px 15px 15px; /* Adjusted for mobile */
             }
 
             main h2 {
-                font-size: 32px;
+                font-size: 40px; /* Adjusted for mobile */
+                letter-spacing: 2px;
             }
         }
     </style>
@@ -208,23 +196,20 @@
 <body>
     <header>
         <img src="icon.jpg" alt="Game Vault Icon" class="header-icon">
-        <div class="header-content">
-            <h1>GAME VAULT GALAXY</h1>
-            <div class="header-right">
-                <div class="dropdown">
-                    <button class="dropdown-btn">Menu</button>
-                    <div class="dropdown-content" id="dropdownMenu">
-                        <a href="#">Home</a>
-                        <a href="#">Games</a>
-                        <a href="#">Leaderboard</a>
-                        <a href="#">Contact</a>
-                    </div>
+        <div class="header-right">
+            <div class="dropdown">
+                <button class="dropdown-btn">Menu</button>
+                <div class="dropdown-content" id="dropdownMenu">
+                    <a href="#">Home</a>
+                    <a href="#">Games</a>
+                    <a href="#">Leaderboard</a>
+                    <a href="#">Contact</a>
                 </div>
-                <form class="search-form">
-                    <input type="text" placeholder="Search Games..." class="search-input">
-                    <button type="submit" class="search-btn">🔍</button>
-                </form>
             </div>
+            <form class="search-form">
+                <input type="text" placeholder="Search Games..." class="search-input">
+                <button type="submit" class="search-btn">🔍</button>
+            </form>
         </div>
     </header>
     <main>
@@ -236,7 +221,7 @@
             const dropdownMenu = document.getElementById('dropdownMenu');
 
             dropdownBtn.addEventListener('click', (e) => {
-                e.preventDefault(); // Prevent form submission if inside form
+                e.preventDefault();
                 dropdownMenu.classList.toggle('active');
             });
 
@@ -248,9 +233,9 @@
 
             const searchForm = document.querySelector('.search-form');
             searchForm.addEventListener('submit', (e) => {
-                e.preventDefault(); // Prevent page reload
+                e.preventDefault();
                 const searchTerm = document.querySelector('.search-input').value;
-                console.log('Search term:', searchTerm); // Placeholder for search functionality
+                console.log('Search term:', searchTerm);
             });
         });
     </script>
