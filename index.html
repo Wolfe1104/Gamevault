@@ -3,12 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HIDDEN GEMS NETWORK</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <title>Game Vault Galaxy</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
-
         * {
             margin: 0;
             padding: 0;
@@ -16,475 +12,319 @@
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #121212;
-            color: #ffffff;
-            line-height: 1.6;
+            background: #1a1a1a url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center/contain;
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            margin: 0;
+            overflow-x: hidden;
         }
 
-        /* Header Styles */
         header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(20, 20, 20, 0.9);
+            padding: 40px 60px;
+            width: 100%;
             position: fixed;
             top: 0;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
+            left: 0;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
-        .logo img {
-            width: 60px;
-            height: 60px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        nav ul li a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            padding: 10px;
-            transition: color 0.3s, background-color 0.3s;
-        }
-
-        nav ul li a:hover, nav ul li a:focus {
-            color: #1e90ff;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-        }
-
-        .search {
-            display: flex;
-            align-items: center;
-        }
-
-        .search input {
-            padding: 8px;
-            border: none;
-            border-radius: 5px 0 0 5px;
-            font-size: 16px;
-        }
-
-        .search button {
-            background-color: #1e90ff;
-            color: #ffffff;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .search button:hover {
-            background-color: #ffd700;
-            color: #121212;
-        }
-
-        .hamburger {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        /* Main Content */
-        main {
-            padding-top: 90px;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(180deg, #1e90ff33, #121212);
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            color: #ffd700;
-        }
-
-        .hero p {
-            font-size: 24px;
-            margin-bottom: 30px;
-        }
-
-        .hero img {
-            width: 250px;
-            height: 250px;
-            border-radius: 10px;
-        }
-
-        .featured, .presales {
-            padding: 40px 20px;
-        }
-
-        .featured h2, .presales h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 32px;
-            color: #ffd700;
-        }
-
-        .swiper-container {
-            width: 100%;
-            height: 350px;
-        }
-
-        .swiper-slide {
-            text-align: center;
-            padding: 20px;
-            background-color: #00000099;
-            border-radius: 10px;
-        }
-
-        .swiper-slide img {
-            width: 150px;
-            height: 150px;
-            margin-bottom: 15px;
-        }
-
-        .swiper-slide h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .card {
-            background-color: #00000099;
-            padding: 25px;
-            border-radius: 10px;
-            text-align: center;
-            opacity: 0;
-            animation: fadeIn 0.5s forwards;
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-
-        .card img {
-            width: 120px;
-            height: 120px;
-            margin-bottom: 15px;
+        .header-icon {
+            width: 100px;
+            height: 100px;
+            margin-right: 30px;
             border-radius: 50%;
+            object-fit: cover;
         }
 
-        .card h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            font-size: 16px;
-            margin-bottom: 15px;
-        }
-
-        .card a {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #1e90ff;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .card a:hover {
-            background-color: #ffd700;
-            color: #121212;
-        }
-
-        /* Footer */
-        footer {
-            padding: 40px 20px;
-            background-color: #000000cc;
-            text-align: center;
-        }
-
-        .newsletter h3 {
-            margin-bottom: 15px;
-        }
-
-        .newsletter form {
+        .header-right {
             display: flex;
-            justify-content: center;
-            gap: 5px;
-            max-width: 400px;
-            margin: 0 auto 20px;
+            align-items: center;
+            gap: 30px;
         }
 
-        .newsletter input {
-            padding: 10px;
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-btn {
+            background-color: #1e90ff;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 22px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-btn:hover {
+            background-color: #4169e1;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #fff;
+            min-width: 280px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            z-index: 1;
+            top: 100%;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 18px 22px;
+            text-decoration: none;
+            display: block;
+            font-size: 22px;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .dropdown-content.active {
+            display: block;
+        }
+
+        .search-form {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-input {
+            padding: 15px;
             border: none;
             border-radius: 5px 0 0 5px;
-            width: 70%;
-            font-size: 16px;
+            font-size: 22px;
+            width: 300px;
+            outline: none;
         }
 
-        .newsletter button {
-            padding: 10px 20px;
+        .search-btn {
             background-color: #1e90ff;
-            color: #ffffff;
+            color: #fff;
+            padding: 15px 22px;
             border: none;
             border-radius: 0 5px 5px 0;
             cursor: pointer;
-            transition: background-color 0.3s;
+            font-size: 22px;
+            transition: background-color 0.3s ease;
         }
 
-        .newsletter button:hover {
-            background-color: #ffd700;
-            color: #121212;
+        .search-btn:hover {
+            background-color: #4169e1;
         }
 
-        .social {
+        /* Section Styles */
+        .section-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: #1e90ff;
+            padding: 20px;
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-body {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .hero-section .section-body {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .join-now {
+            font-size: 48px;
+            font-weight: 700;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .freeplay-text {
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .subsection-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
             margin: 20px 0;
+            padding: 20px;
         }
 
-        .social a {
-            color: #ffffff;
-            font-size: 28px;
-            margin: 0 15px;
-            transition: color 0.3s;
+        .subsection-header {
+            background: #4169e1;
+            padding: 15px;
+            font-size: 24px;
+            border-radius: 5px 5px 0 0;
         }
 
-        .social a:hover {
-            color: #1e90ff;
+        .subsection-body {
+            padding: 20px;
+            font-size: 18px;
         }
 
-        .legal p, .legal a {
-            font-size: 14px;
-            margin: 5px 0;
-            color: #cccccc;
+        main {
+            padding: 140px 20px 40px;
         }
 
-        .legal a {
-            color: #1e90ff;
-            text-decoration: none;
-        }
-
-        .legal a:hover {
-            text-decoration: underline;
-        }
-
-        /* Mobile Responsiveness */
         @media (max-width: 768px) {
             header {
-                padding: 10px 20px;
+                padding: 25px 30px;
+                flex-wrap: wrap;
             }
 
-            nav {
-                display: none;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background-color: #000000cc;
-                padding: 20px;
+            .header-icon {
+                width: 60px;
+                height: 60px;
+                margin-right: 20px;
             }
 
-            nav.active {
-                display: block;
-            }
-
-            nav ul {
-                flex-direction: column;
+            .header-right {
                 gap: 15px;
+                margin-top: 15px;
             }
 
-            .hamburger {
-                display: block;
+            .search-input {
+                width: 200px;
+                font-size: 18px;
+                padding: 12px;
             }
 
-            .search input {
-                width: 120px;
-            }
-
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .hero p {
+            .dropdown-btn, .search-btn {
+                padding: 12px 20px;
                 font-size: 18px;
             }
 
-            .hero img {
-                width: 200px;
-                height: 200px;
+            .dropdown-content {
+                min-width: 220px;
             }
 
-            .swiper-container {
-                height: 300px;
+            .dropdown-content a {
+                font-size: 18px;
+                padding: 14px 18px;
             }
 
-            .swiper-slide img {
-                width: 120px;
-                height: 120px;
+            .section-box {
+                margin: 15px;
+            }
+
+            .section-header {
+                font-size: 28px;
+            }
+
+            .join-now {
+                font-size: 36px;
+            }
+
+            .freeplay-text {
+                font-size: 20px;
+            }
+
+            .subsection-header {
+                font-size: 20px;
+            }
+
+            .subsection-body {
+                font-size: 16px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <div class="logo">
-            <img src="logo.png" alt="HIDDEN GEMS NETWORK Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="#"><i class="fas fa-coins"></i> Top Presales</a></li>
-                <li><a href="#"><i class="fas fa-newspaper"></i> Crypto News</a></li>
-                <li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
-                <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
-            </ul>
-        </nav>
-        <div class="search">
-            <input type="text" placeholder="Search Cryptos...">
-            <button><i class="fas fa-search"></i></button>
-        </div>
-        <div class="hamburger">
-            <i class="fas fa-bars"></i>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main>
-        <section class="hero">
-            <h1>Welcome to Hidden Gems Network</h1>
-            <p>Discover the most promising crypto presales</p>
-            <img src="animated-gif.gif" alt="Animated Gem Illustration">
-        </section>
-
-        <section class="featured">
-            <h2>Featured Presales</h2>
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="featured1.png" alt="Featured Presale 1 Logo">
-                        <h3>Featured Presale 1</h3>
-                        <p>Innovative blockchain project with high potential.</p>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="featured2.png" alt="Featured Presale 2 Logo">
-                        <h3>Featured Presale 2</h3>
-                        <p>Decentralized finance solution for the future.</p>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="featured3.png" alt="Featured Presale 3 Logo">
-                        <h3>Featured Presale 3</h3>
-                        <p>Next-gen NFT platform with unique features.</p>
-                    </div>
+        <img src="icon.jpg" alt="Game Vault Icon" class="header-icon">
+        <div class="header-right">
+            <div class="dropdown">
+                <button class="dropdown-btn">Menu</button>
+                <div class="dropdown-content" id="dropdownMenu">
+                    <a href="#">Home</a>
+                    <a href="#">Games</a>
+                    <a href="#">Leaderboard</a>
+                    <a href="#">Contact</a>
                 </div>
-                <div class="swiper-pagination"></div>
             </div>
-        </section>
-
-        <section class="presales">
-            <h2>Top Presales</h2>
-            <div class="grid">
-                <div class="card">
-                    <img src="logo1.png" alt="Presale 1 Logo">
-                    <h3>Presale 1</h3>
-                    <p>A groundbreaking crypto project.</p>
-                    <a href="#">Learn More</a>
-                </div>
-                <div class="card">
-                    <img src="logo2.png" alt="Presale 2 Logo">
-                    <h3>Presale 2</h3>
-                    <p>Secure and scalable blockchain.</p>
-                    <a href="#">Learn More</a>
-                </div>
-                <div class="card">
-                    <img src="logo3.png" alt="Presale 3 Logo">
-                    <h3>Presale 3</h3>
-                    <p>Revolutionary DeFi platform.</p>
-                    <a href="#">Learn More</a>
-                </div>
-                <!-- Add more cards as needed -->
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="newsletter">
-            <h3>Stay Updated</h3>
-            <form>
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit">Subscribe</button>
+            <form class="search-form">
+                <input type="text" placeholder="Search Games..." class="search-input">
+                <button type="submit" class="search-btn">🔍</button>
             </form>
         </div>
-        <div class="social">
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <div class="section-box hero-section">
+            <div class="section-header">WELCOME TO GAME VAULT GALAXY</div>
+            <div class="section-body">
+                <div class="join-now">JOIN NOW</div>
+                <div class="freeplay-text">Earn $20 in Freeplay</div>
+            </div>
         </div>
-        <div class="legal">
-            <p>&copy; 2023 HIDDEN GEMS NETWORK. All rights reserved.</p>
-            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-            <p>Disclaimer: Investing in cryptocurrencies involves risk. Please do your own research.</p>
-        </div>
-    </footer>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <!-- Freeplay Section -->
+        <div class="section-box">
+            <div class="section-header">FREEPLAY GATEWAY</div>
+            <div class="section-body">
+                <div class="subsection-box">
+                    <div class="subsection-header">
+                        <a href="https://coinbase.com/join/MZRYLPC?src=android-link" target="_blank">Coinbase Invite Link</a>
+                    </div>
+                    <div class="subsection-body">
+                        <p>Join Coinbase using this link to start earning rewards! Sign up, complete verification, and get started with your freeplay bonus. More details and images coming soon!</p>
+                        <!-- Add images here as needed -->
+                        <!-- <img src="image1.jpg" alt="Freeplay Image 1" style="max-width: 100%; margin-top: 15px;"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Hamburger Menu Toggle
-            const hamburger = document.querySelector('.hamburger');
-            const nav = document.querySelector('nav');
-            hamburger.addEventListener('click', () => {
-                nav.classList.toggle('active');
+            const dropdownBtn = document.querySelector('.dropdown-btn');
+            const dropdownMenu = document.getElementById('dropdownMenu');
+
+            dropdownBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                dropdownMenu.classList.toggle('active');
             });
 
-            // Swiper Carousel
-            const swiper = new Swiper('.swiper-container', {
-                loop: true,
-                autoplay: {
-                    delay: 3000,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
+            document.addEventListener('click', (event) => {
+                if (!dropdownBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                    dropdownMenu.classList.remove('active');
+                }
             });
 
-            // Card Animation Delays
-            document.querySelectorAll('.card').forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.1}s`;
+            const searchForm = document.querySelector('.search-form');
+            searchForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const searchTerm = document.querySelector('.search-input').value;
+                console.log('Search term:', searchTerm);
             });
         });
-    </script>
-    <!-- Google Analytics (Replace UA-XXXXX-Y with actual tracking ID) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-XXXXX-Y');
     </script>
 </body>
 </html>
