@@ -126,21 +126,71 @@
             background-color: #4169e1;
         }
 
-        main {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            padding: 180px 20px 20px;
+        /* Section Styles */
+        .section-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
         }
 
-        main h2 {
-            font-size: 60px;
+        .section-header {
+            background: #1e90ff;
+            padding: 20px;
+            text-align: center;
+            font-size: 36px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
+        }
+
+        .section-body {
+            padding: 30px;
             text-align: center;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-section .section-body {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .join-now {
+            font-size: 48px;
+            font-weight: 700;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .freeplay-text {
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .subsection-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            margin: 20px 0;
+            padding: 20px;
+        }
+
+        .subsection-header {
+            background: #4169e1;
+            padding: 15px;
+            font-size: 24px;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .subsection-body {
+            padding: 20px;
+            font-size: 18px;
+        }
+
+        main {
+            padding: 140px 20px 40px;
         }
 
         @media (max-width: 768px) {
@@ -180,13 +230,28 @@
                 padding: 14px 18px;
             }
 
-            main {
-                padding: 120px 15px 15px;
+            .section-box {
+                margin: 15px;
             }
 
-            main h2 {
-                font-size: 40px;
-                letter-spacing: 2px;
+            .section-header {
+                font-size: 28px;
+            }
+
+            .join-now {
+                font-size: 36px;
+            }
+
+            .freeplay-text {
+                font-size: 20px;
+            }
+
+            .subsection-header {
+                font-size: 20px;
+            }
+
+            .subsection-body {
+                font-size: 16px;
             }
         }
     </style>
@@ -211,7 +276,31 @@
         </div>
     </header>
     <main>
-        <h2>WELCOME TO GAME VAULT GALAXY</h2>
+        <!-- Hero Section -->
+        <div class="section-box hero-section">
+            <div class="section-header">WELCOME TO GAME VAULT GALAXY</div>
+            <div class="section-body">
+                <div class="join-now">JOIN NOW</div>
+                <div class="freeplay-text">Earn $20 in Freeplay</div>
+            </div>
+        </div>
+
+        <!-- Freeplay Section -->
+        <div class="section-box">
+            <div class="section-header">FREEPLAY GATEWAY</div>
+            <div class="section-body">
+                <div class="subsection-box">
+                    <div class="subsection-header">
+                        <a href="https://coinbase.com/join/MZRYLPC?src=android-link" target="_blank">Coinbase Invite Link</a>
+                    </div>
+                    <div class="subsection-body">
+                        <p>Join Coinbase using this link to start earning rewards! Sign up, complete verification, and get started with your freeplay bonus. More details and images coming soon!</p>
+                        <!-- Add images here as needed -->
+                        <!-- <img src="image1.jpg" alt="Freeplay Image 1" style="max-width: 100%; margin-top: 15px;"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
