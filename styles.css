@@ -5,12 +5,15 @@
 }
 
 body {
-    background-image: url('./background.jpeg'); /* Adjusted path with ./ */
-    background-size: cover;
+    background-image: url('./background.jpeg');
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 100vh;
+    height: 100vh;
+    width: 100vw;
     font-family: Arial, sans-serif;
+    margin: 0;
+    overflow-x: hidden;
 }
 
 header {
@@ -93,7 +96,6 @@ main {
     padding: 120px 20px 20px;
 }
 
-/* Mobile responsiveness */
 @media (max-width: 768px) {
     header {
         padding: 15px 20px;
