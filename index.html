@@ -12,7 +12,7 @@
         }
 
         body {
-            background: #1a1a1a url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center/contain;
+            background: #1a1a1a url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center/cover;
             min-height: 100vh;
             font-family: 'Arial', sans-serif;
             color: #fff;
@@ -25,7 +25,7 @@
             align-items: center;
             justify-content: space-between;
             background-color: rgba(20, 20, 20, 0.9);
-            padding: 40px 60px;
+            padding: 20px 40px;
             width: 100%;
             position: fixed;
             top: 0;
@@ -35,9 +35,9 @@
         }
 
         .header-icon {
-            width: 100px;
-            height: 100px;
-            margin-right: 30px;
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
             border-radius: 50%;
             object-fit: cover;
         }
@@ -45,7 +45,7 @@
         .header-right {
             display: flex;
             align-items: center;
-            gap: 30px;
+            gap: 20px;
         }
 
         .dropdown {
@@ -55,11 +55,11 @@
         .dropdown-btn {
             background-color: #1e90ff;
             color: #fff;
-            padding: 15px 30px;
+            padding: 12px 24px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 22px;
+            font-size: 18px;
             font-weight: 600;
             transition: background-color 0.3s ease;
         }
@@ -73,7 +73,7 @@
             position: absolute;
             right: 0;
             background-color: #fff;
-            min-width: 280px;
+            min-width: 200px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             border-radius: 5px;
             z-index: 1;
@@ -82,10 +82,10 @@
 
         .dropdown-content a {
             color: #333;
-            padding: 18px 22px;
+            padding: 12px 16px;
             text-decoration: none;
             display: block;
-            font-size: 22px;
+            font-size: 16px;
             transition: background-color 0.3s ease;
         }
 
@@ -103,26 +103,232 @@
         }
 
         .search-input {
-            padding: 15px;
+            padding: 12px;
             border: none;
             border-radius: 5px 0 0 5px;
-            font-size: 22px;
-            width: 300px;
+            font-size: 16px;
+            width: 250px;
             outline: none;
         }
 
         .search-btn {
             background-color: #1e90ff;
             color: #fff;
-            padding: 15px 22px;
+            padding: 12px 18px;
             border: none;
             border-radius: 0 5px 5px 0;
             cursor: pointer;
-            font-size: 22px;
+            font-size: 16px;
             transition: background-color 0.3s ease;
         }
 
         .search-btn:hover {
+            background-color: #4169e1;
+        }
+
+        /* Auth Buttons */
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .auth-buttons button {
+            background-color: #1e90ff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .auth-buttons button:hover {
+            background-color: #4169e1;
+        }
+
+        /* Logged In State */
+        .logged-in {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .profile-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-icon:hover {
+            transform: scale(1.1);
+        }
+
+        #sign-out-btn {
+            background-color: #1e90ff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        #sign-out-btn:hover {
+            background-color: #4169e1;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            color: #333;
+            padding: 25px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-content h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #1e90ff;
+        }
+
+        .modal-content form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .modal-content label {
+            text-align: left;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .modal-content input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .modal-content input:focus {
+            border-color: #1e90ff;
+        }
+
+        .modal-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .modal-buttons button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        #cancel-sign-in, #cancel-forgot {
+            background-color: #e0e0e0;
+            color: #333;
+        }
+
+        #cancel-sign-in:hover, #cancel-forgot:hover {
+            background-color: #d0d0d0;
+        }
+
+        #sign-in-form button[type="submit"], #forgot-password-form button[type="submit"] {
+            background-color: #1e90ff;
+            color: #fff;
+        }
+
+        #sign-in-form button[type="submit"]:hover, #forgot-password-form button[type="submit"]:hover {
+            background-color: #4169e1;
+        }
+
+        .social-sign-in {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .social-sign-in button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #fff;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-sign-in button:hover {
+            opacity: 0.9;
+        }
+
+        #google-sign-in {
+            background-color: #db4437;
+        }
+
+        #facebook-sign-in {
+            background-color: #3b5998;
+        }
+
+        #forgot-password-link {
+            font-size: 12px;
+            color: #1e90ff;
+            text-decoration: none;
+            margin-top: 5px;
+            display: block;
+        }
+
+        #forgot-password-link:hover {
+            text-decoration: underline;
+        }
+
+        #profile-info {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        #ok-profile {
+            padding: 10px 20px;
+            background-color: #1e90ff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        #ok-profile:hover {
             background-color: #4169e1;
         }
 
@@ -134,13 +340,14 @@
             max-width: 800px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             overflow: hidden;
+            backdrop-filter: blur(5px);
         }
 
         .section-header {
             background: #1e90ff;
             padding: 20px;
             text-align: center;
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -189,45 +396,71 @@
             font-size: 18px;
         }
 
+        .coinbase-btn {
+            display: inline-block;
+            background-color: #1e90ff;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .coinbase-btn:hover {
+            background-color: #4169e1;
+            transform: scale(1.05);
+        }
+
         main {
-            padding: 140px 20px 40px;
+            padding: 120px 20px 40px;
         }
 
         @media (max-width: 768px) {
             header {
-                padding: 25px 30px;
+                padding: 15px 20px;
                 flex-wrap: wrap;
             }
 
             .header-icon {
                 width: 60px;
                 height: 60px;
-                margin-right: 20px;
+                margin-right: 15px;
             }
 
             .header-right {
-                gap: 15px;
-                margin-top: 15px;
+                gap: 10px;
+                margin-top: 10px;
             }
 
             .search-input {
-                width: 200px;
-                font-size: 18px;
-                padding: 12px;
+                width: 180px;
+                font-size: 14px;
+                padding: 10px;
             }
 
             .dropdown-btn, .search-btn {
-                padding: 12px 20px;
-                font-size: 18px;
+                padding: 10px 15px;
+                font-size: 16px;
+            }
+
+            .auth-buttons button, #sign-out-btn {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+
+            .profile-icon {
+                width: 30px;
+                height: 30px;
             }
 
             .dropdown-content {
-                min-width: 220px;
+                min-width: 180px;
             }
 
             .dropdown-content a {
-                font-size: 18px;
-                padding: 14px 18px;
+                font-size: 14px;
+                padding: 10px 14px;
             }
 
             .section-box {
@@ -235,7 +468,7 @@
             }
 
             .section-header {
-                font-size: 28px;
+                font-size: 24px;
             }
 
             .join-now {
@@ -243,7 +476,7 @@
             }
 
             .freeplay-text {
-                font-size: 20px;
+                font-size: 18px;
             }
 
             .subsection-header {
@@ -252,6 +485,11 @@
 
             .subsection-body {
                 font-size: 16px;
+            }
+
+            .modal-content {
+                width: 90%;
+                padding: 20px;
             }
         }
     </style>
@@ -273,6 +511,9 @@
                 <input type="text" placeholder="Search Games..." class="search-input">
                 <button type="submit" class="search-btn">🔍</button>
             </form>
+            <div id="auth-container">
+                <!-- Populated by JavaScript -->
+            </div>
         </div>
     </header>
     <main>
@@ -291,22 +532,182 @@
             <div class="section-body">
                 <div class="subsection-box">
                     <div class="subsection-header">
-                        <a href="https://coinbase.com/join/MZRYLPC?src=android-link" target="_blank">Coinbase Invite Link</a>
+                        <a href="https://coinbase.com/join/MZRYLPC?src=android-link" target="_blank" class="coinbase-btn">Join Coinbase</a>
                     </div>
                     <div class="subsection-body">
                         <p>Join Coinbase using this link to start earning rewards! Sign up, complete verification, and get started with your freeplay bonus. More details and images coming soon!</p>
-                        <!-- Add images here as needed -->
-                        <!-- <img src="image1.jpg" alt="Freeplay Image 1" style="max-width: 100%; margin-top: 15px;"> -->
                     </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <!-- Modals -->
+    <div id="sign-in-modal" class="modal">
+        <div class="modal-content">
+            <h2>Sign In</h2>
+            <form id="sign-in-form">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <a href="#" id="forgot-password-link">Forgot Username/Password</a>
+                <div class="social-sign-in">
+                    <button type="button" id="google-sign-in">Sign in with Google</button>
+                    <button type="button" id="facebook-sign-in">Sign in with Facebook</button>
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" id="cancel-sign-in">Cancel</button>
+                    <button type="submit">Sign In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="forgot-password-modal" class="modal">
+        <div class="modal-content">
+            <h2>Forgot Username/Password</h2>
+            <form id="forgot-password-form">
+                <label for="forgot-email">Email:</label>
+                <input type="email" id="forgot-email" name="forgot-email" required>
+                <div class="modal-buttons">
+                    <button type="button" id="cancel-forgot">Cancel</button>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="profile-modal" class="modal">
+        <div class="modal-content">
+            <h2>Profile</h2>
+            <div id="profile-info">
+                <!-- User info inserted here -->
+            </div>
+            <button id="ok-profile">OK</button>
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const authContainer = document.getElementById('auth-container');
+            const signInModal = document.getElementById('sign-in-modal');
+            const forgotPasswordModal = document.getElementById('forgot-password-modal');
+            const profileModal = document.getElementById('profile-modal');
+
+            // Simulated userinfo.log data
+            const userData = {
+                email: 'user@example.com',
+                password: 'password123',
+                username: 'gamevaultuser'
+            };
+
+            // Initialize user status
+            if (localStorage.getItem('loggedIn') === 'true') {
+                showLoggedInState();
+            } else {
+                showGuestState();
+            }
+
+            function showGuestState() {
+                authContainer.innerHTML = `
+                    <div class="auth-buttons">
+                        <button id="sign-in-btn">Sign In</button>
+                        <button id="sign-up-btn">Sign Up</button>
+                    </div>
+                `;
+                document.getElementById('sign-in-btn').addEventListener('click', () => {
+                    signInModal.style.display = 'flex';
+                });
+                document.getElementById('sign-up-btn').addEventListener('click', () => {
+                    alert('Sign Up functionality not implemented yet.');
+                });
+            }
+
+            function showLoggedInState() {
+                authContainer.innerHTML = `
+                    <div class="logged-in">
+                        <img src="https://via.placeholder.com/40" alt="Profile" class="profile-icon">
+                        <button id="sign-out-btn">Sign Out</button>
+                    </div>
+                `;
+                document.querySelector('.profile-icon').addEventListener('click', () => {
+                    document.getElementById('profile-info').innerHTML = `
+                        <p><strong>Username:</strong> ${userData.username}</p>
+                        <p><strong>Email:</strong> ${localStorage.getItem('email')}</p>
+                    `;
+                    profileModal.style.display = 'flex';
+                });
+                document.getElementById('sign-out-btn').addEventListener('click', () => {
+                    localStorage.removeItem('loggedIn');
+                    localStorage.removeItem('email');
+                    showGuestState();
+                });
+            }
+
+            // Modal event listeners
+            document.getElementById('cancel-sign-in').addEventListener('click', () => {
+                signInModal.style.display = 'none';
+            });
+
+            document.getElementById('forgot-password-link').addEventListener('click', (e) => {
+                e.preventDefault();
+                signInModal.style.display = 'none';
+                forgotPasswordModal.style.display = 'flex';
+            });
+
+            document.getElementById('cancel-forgot').addEventListener('click', () => {
+                forgotPasswordModal.style.display = 'none';
+            });
+
+            document.getElementById('ok-profile').addEventListener('click', () => {
+                profileModal.style.display = 'none';
+            });
+
+            // Sign-in form submission
+            document.getElementById('sign-in-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                if (email === userData.email) {
+                    if (password === userData.password) {
+                        localStorage.setItem('loggedIn', 'true');
+                        localStorage.setItem('email', email);
+                        signInModal.style.display = 'none';
+                        showLoggedInState();
+                    } else {
+                        alert('Wrong password');
+                    }
+                } else {
+                    alert('Invalid email');
+                }
+            });
+
+            // Forgot password form submission
+            document.getElementById('forgot-password-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = document.getElementById('forgot-email').value;
+                if (email === userData.email) {
+                    console.log(`Email sent from admin.gvg@google.com to ${email} with subject: "Do Not Reply"`);
+                    alert('Your username and password have been sent to your email.');
+                    forgotPasswordModal.style.display = 'none';
+                    signInModal.style.display = 'flex';
+                } else {
+                    alert('Email not found in userinfo.log');
+                }
+            });
+
+            // Social sign-in placeholders
+            document.getElementById('google-sign-in').addEventListener('click', () => {
+                alert('Google Sign-In not implemented yet.');
+            });
+            document.getElementById('facebook-sign-in').addEventListener('click', () => {
+                alert('Facebook Sign-In not implemented yet.');
+            });
+
+            // Dropdown and search functionality
             const dropdownBtn = document.querySelector('.dropdown-btn');
             const dropdownMenu = document.getElementById('dropdownMenu');
-
             dropdownBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 dropdownMenu.classList.toggle('active');
