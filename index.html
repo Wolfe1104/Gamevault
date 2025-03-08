@@ -4,26 +4,255 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Vault Galaxy</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('./bg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(20, 20, 20, 0.9);
+            padding: 20px 40px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-icon {
+            width: 60px;
+            height: 60px;
+            margin-right: 20px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-btn {
+            background-color: #1e90ff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-btn:hover {
+            background-color: #4169e1;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #fff;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            z-index: 1;
+            top: 100%;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .dropdown-content.active {
+            display: block;
+        }
+
+        .search-form {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-size: 16px;
+            width: 200px;
+            outline: none;
+        }
+
+        .search-btn {
+            background-color: #1e90ff;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-btn:hover {
+            background-color: #4169e1;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 100px);
+            padding: 100px 20px 20px;
+        }
+
+        main h2 {
+            font-size: 48px; /* Semi-large title */
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+                flex-wrap: wrap;
+            }
+
+            .header-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            header h1 {
+                font-size: 22px;
+            }
+
+            .header-right {
+                gap: 10px;
+                margin-top: 10px;
+            }
+
+            .search-input {
+                width: 150px;
+            }
+
+            .dropdown-btn, .search-btn {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+
+            .dropdown-content {
+                min-width: 160px;
+            }
+
+            .dropdown-content a {
+                font-size: 14px;
+                padding: 10px 14px;
+            }
+
+            main h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="background-container"></div>
     <header>
-        <img src="icon.jpg" alt="Icon" class="header-icon">
-        <h1>GAME VAULT GALAXY</h1>
-        <div class="dropdown">
-            <button class="dropdown-btn">Menu</button>
-            <div class="dropdown-content" id="dropdownMenu">
-                <a href="#">Home</a>
-                <a href="#">Games</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
+        <img src="icon.jpg" alt="Game Vault Icon" class="header-icon">
+        <div class="header-content">
+            <h1>GAME VAULT GALAXY</h1>
+            <div class="header-right">
+                <div class="dropdown">
+                    <button class="dropdown-btn">Menu</button>
+                    <div class="dropdown-content" id="dropdownMenu">
+                        <a href="#">Home</a>
+                        <a href="#">Games</a>
+                        <a href="#">Leaderboard</a>
+                        <a href="#">Contact</a>
+                    </div>
+                </div>
+                <form class="search-form">
+                    <input type="text" placeholder="Search Games..." class="search-input">
+                    <button type="submit" class="search-btn">🔍</button>
+                </form>
             </div>
         </div>
     </header>
     <main>
-        <p>Welcome to Game Vault Galaxy!</p>
+        <h2>WELCOME TO GAME VAULT GALAXY</h2>
     </main>
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dropdownBtn = document.querySelector('.dropdown-btn');
+            const dropdownMenu = document.getElementById('dropdownMenu');
+
+            dropdownBtn.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent form submission if inside form
+                dropdownMenu.classList.toggle('active');
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!dropdownBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                    dropdownMenu.classList.remove('active');
+                }
+            });
+
+            const searchForm = document.querySelector('.search-form');
+            searchForm.addEventListener('submit', (e) => {
+                e.preventDefault(); // Prevent page reload
+                const searchTerm = document.querySelector('.search-input').value;
+                console.log('Search term:', searchTerm); // Placeholder for search functionality
+            });
+        });
+    </script>
 </body>
 </html>
