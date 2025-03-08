@@ -1,116 +1,28 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: white; /* Solid white background */
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-}
-
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 20px 40px; /* Larger padding for a bigger header */
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    flex-wrap: wrap;
-}
-
-.header-icon {
-    width: 80px; /* Larger icon */
-    height: 80px;
-    margin-right: 25px;
-}
-
-h1 {
-    color: white;
-    font-size: 36px; /* Larger font size */
-    flex-grow: 1;
-    white-space: nowrap;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-btn {
-    background-color: #007bff;
-    color: white;
-    padding: 15px 30px; /* Larger button */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 20px; /* Larger text */
-}
-
-.dropdown-btn:hover {
-    background-color: #0056b3;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    right: 0;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 5px;
-    top: 100%;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-
-.dropdown-content.active {
-    display: block;
-}
-
-main {
-    color: black; /* Changed to black for visibility on white background */
-    text-align: center;
-    padding: 120px 20px 20px; /* Increased top padding for larger header */
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    header {
-        padding: 15px 20px; /* Slightly smaller padding on mobile */
-    }
-
-    .header-icon {
-        width: 50px; /* Smaller icon on mobile */
-        height: 50px;
-        margin-right: 15px;
-    }
-
-    h1 {
-        font-size: 24px; /* Smaller title on mobile */
-    }
-
-    .dropdown-btn {
-        padding: 10px 20px; /* Smaller button on mobile */
-        font-size: 16px;
-    }
-
-    .dropdown-content {
-        min-width: 120px;
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Vault Galaxy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="icon.jpg" alt="Icon" class="header-icon">
+        <h1>GAME VAULT GALAXY</h1>
+        <div class="dropdown">
+            <button class="dropdown-btn">Menu</button>
+            <div class="dropdown-content" id="dropdownMenu">
+                <a href="#">Home</a>
+                <a href="#">Games</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <p>Welcome to Game Vault Galaxy!</p>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
