@@ -3,14 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WalletConnect Demo</title>
+    <title>Game Vault Galaxy</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Connect Your Wallet</h1>
-    <button id="connectButton">Connect Wallet</button>
-    <p id="account"></p>
-    <script src="https://unpkg.com/@walletconnect/sign-client@2/dist/index.umd.js"></script>
-    <script src="https://unpkg.com/@web3modal/standalone@2/dist/index.umd.js"></script>
+    <header>
+        <img src="icon.jpg" alt="Icon" class="header-icon">
+        <h1>GAME VAULT GALAXY</h1>
+        <div class="dropdown">
+            <button class="dropdown-btn">Menu</button>
+            <div class="dropdown-content" id="dropdownMenu">
+                <a href="#">Home</a>
+                <a href="#">Games</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <p>Welcome to Game Vault Galaxy!</p>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
