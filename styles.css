@@ -5,10 +5,7 @@
 }
 
 body {
-    background-image: url('background.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: white; /* Solid white background */
     min-height: 100vh;
     font-family: Arial, sans-serif;
 }
@@ -18,24 +15,24 @@ header {
     align-items: center;
     justify-content: space-between;
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 15px 30px; /* Larger padding for a bigger header */
+    padding: 20px 40px; /* Larger padding for a bigger header */
     width: 100%;
-    position: fixed; /* Stays at the top when scrolling */
+    position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000; /* Ensures header stays above content */
-    flex-wrap: wrap; /* Allows wrapping if needed */
+    z-index: 1000;
+    flex-wrap: wrap;
 }
 
 .header-icon {
-    width: 60px; /* Slightly larger icon */
-    height: 60px;
-    margin-right: 20px;
+    width: 80px; /* Larger icon */
+    height: 80px;
+    margin-right: 25px;
 }
 
 h1 {
     color: white;
-    font-size: 28px; /* Larger font size */
+    font-size: 36px; /* Larger font size */
     flex-grow: 1;
     white-space: nowrap;
 }
@@ -48,11 +45,11 @@ h1 {
 .dropdown-btn {
     background-color: #007bff;
     color: white;
-    padding: 12px 24px; /* Larger button */
+    padding: 15px 30px; /* Larger button */
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 18px; /* Larger text */
+    font-size: 20px; /* Larger text */
 }
 
 .dropdown-btn:hover {
@@ -68,7 +65,7 @@ h1 {
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     z-index: 1;
     border-radius: 5px;
-    top: 100%; /* Positions below the button */
+    top: 100%;
 }
 
 .dropdown-content a {
@@ -87,33 +84,33 @@ h1 {
 }
 
 main {
-    color: white;
+    color: black; /* Changed to black for visibility on white background */
     text-align: center;
-    padding: 100px 20px 20px; /* Extra top padding to avoid overlap with fixed header */
+    padding: 120px 20px 20px; /* Increased top padding for larger header */
 }
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
     header {
-        padding: 10px 15px; /* Slightly smaller padding on mobile */
+        padding: 15px 20px; /* Slightly smaller padding on mobile */
     }
 
     .header-icon {
-        width: 40px; /* Smaller icon on mobile */
-        height: 40px;
-        margin-right: 10px;
+        width: 50px; /* Smaller icon on mobile */
+        height: 50px;
+        margin-right: 15px;
     }
 
     h1 {
-        font-size: 20px; /* Smaller title on mobile */
+        font-size: 24px; /* Smaller title on mobile */
     }
 
     .dropdown-btn {
-        padding: 8px 16px; /* Smaller button on mobile */
-        font-size: 14px;
+        padding: 10px 20px; /* Smaller button on mobile */
+        font-size: 16px;
     }
 
     .dropdown-content {
-        min-width: 120px; /* Adjust dropdown width for mobile */
+        min-width: 120px;
     }
 }
